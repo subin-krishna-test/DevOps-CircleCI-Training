@@ -16,7 +16,7 @@ sudo systemctl restart nginx
 EOF
 #security_groups = [aws_security_group.Security_group_instance.name]
 }
-
+/*
 #EC2 instance-2              
 resource "aws_instance" "Server-2" {
   ami           = "ami-00399ec92321828f5"
@@ -35,7 +35,7 @@ sudo systemctl restart nginx
 EOF
 #security_groups = [aws_security_group.Security_group_instance.name]
 }
-/*
+
 #Security Group for EC2 instance
 resource "aws_security_group" "Security_group_instance" {
   name        = "Instance Security Group"
