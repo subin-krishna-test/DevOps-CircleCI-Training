@@ -4,7 +4,7 @@ orbs:
 workflows:
   deploy_infrastructure:
     jobs:
-      - terraform/init:
+      - terraform/fmt:
           checkout: true
           context: terraform
       - terraform/validate:
@@ -12,6 +12,11 @@ workflows:
           context: terraform
           requires:
             - terraform/fmt
+      - terraform/init:
+          checkout: true
+          context: terraform
+          requires:
+            - terraform/validate
       - terraform/plan:
           checkout: true
           context: terraform
