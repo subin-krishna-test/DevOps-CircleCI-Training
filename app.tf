@@ -14,7 +14,7 @@ sudo apt install nginx -y
 echo "<h1>Server-1</h1>" | sudo tee /var/www/html/index.html
 sudo systemctl restart nginx
 EOF
-security_groups = [aws_security_group.Security_group_instance.name]
+#security_groups = [aws_security_group.Security_group_instance.name]
 }
 
 #EC2 instance-2              
@@ -33,9 +33,9 @@ sudo apt install nginx -y
 echo "<h1>Server-2</h1>" | sudo tee /var/www/html/index.html
 sudo systemctl restart nginx
 EOF
-security_groups = [aws_security_group.Security_group_instance.name]
+#security_groups = [aws_security_group.Security_group_instance.name]
 }
-
+/*
 #Security Group for EC2 instance
 resource "aws_security_group" "Security_group_instance" {
   name        = "Instance Security Group"
@@ -90,4 +90,4 @@ resource "aws_security_group" "Security_group_instance" {
   tags = {
     Name = "Instance_Security_Group1"
   }
-}
+}*/
